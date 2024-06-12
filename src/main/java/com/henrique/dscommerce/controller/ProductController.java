@@ -2,6 +2,7 @@ package com.henrique.dscommerce.controller;
 
 import com.henrique.dscommerce.dto.ProductDTO;
 import com.henrique.dscommerce.services.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,7 +32,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto){
+    public ResponseEntity<ProductDTO> insert(@RequestBody @Valid ProductDTO dto){
         dto = productService.insert(dto);
 
         URI uri = ServletUriComponentsBuilder
@@ -44,7 +45,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto){
+    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody @Valid ProductDTO dto){
         dto = productService.update(id, dto);
 
         return ResponseEntity.ok(dto);
