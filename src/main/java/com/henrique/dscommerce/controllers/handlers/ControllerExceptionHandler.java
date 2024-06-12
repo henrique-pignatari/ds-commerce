@@ -1,4 +1,4 @@
-package com.henrique.dscommerce.controller.handlers;
+package com.henrique.dscommerce.controllers.handlers;
 
 import com.henrique.dscommerce.dto.CustomError;
 import com.henrique.dscommerce.dto.ValidationError;

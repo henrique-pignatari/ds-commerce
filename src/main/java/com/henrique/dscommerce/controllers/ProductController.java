@@ -1,4 +1,4 @@
-package com.henrique.dscommerce.controller;
+package com.henrique.dscommerce.controllers;
 
 import com.henrique.dscommerce.dto.ProductDTO;
 import com.henrique.dscommerce.services.ProductService;
