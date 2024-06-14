@@ -1,6 +1,7 @@
 package com.henrique.dscommerce.services;
 
 import com.henrique.dscommerce.dto.ProductDTO;
+import com.henrique.dscommerce.dto.ProductMinDTO;
 import com.henrique.dscommerce.entities.Product;
 import com.henrique.dscommerce.repositories.ProductRepository;
 import com.henrique.dscommerce.services.exceptions.DatabaseException;
@@ -29,9 +30,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable){
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable){
         Page<Product> result = productRepository.searchByName(name, pageable);
-        return result.map(ProductDTO::new);
+        return result.map(ProductMinDTO::new);
     }
 
     @Transactional
