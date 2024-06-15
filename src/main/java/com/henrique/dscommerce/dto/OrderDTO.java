@@ -3,6 +3,7 @@ package com.henrique.dscommerce.dto;
 import com.henrique.dscommerce.entities.Order;
 import com.henrique.dscommerce.entities.OrderItem;
 import com.henrique.dscommerce.entities.OrderStatus;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class OrderDTO {
     private OrderStatus status;
     private ClientDTO client;
     private PaymentDTO payment;
+    @NotEmpty
     private List<OrderItemDTO> items = new ArrayList<>();
 
     public OrderDTO(Long id, Instant moment, OrderStatus status, ClientDTO client, PaymentDTO payment) {
